@@ -18,7 +18,7 @@ export function readASBase(file) {
   });
 }
 
-
+//
 export const NUMREG = /^[0-9]{0,}$/
 
 export const SMALLNUMREG = /^[0-9]{0,}(\.[0-9]{0,3})?$/

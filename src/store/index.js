@@ -15,8 +15,6 @@ export default new vuex.Store({
 
     state: {
         nowRouter: {},
-        STATELIST: ['未发货', '已发货'],
-        STATELISTTWO: ['未支付', '已支付']
     },
     mutations: {
         SET_NOWROUTER(state, val) {
