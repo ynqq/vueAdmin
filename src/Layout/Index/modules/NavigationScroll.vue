@@ -8,7 +8,7 @@
     <el-tag
       :closable="index != 0"
       @close="deleteLink(index)"
-      :class="[showIndex == index ? 'show' : '', 'tags']"
+      :class="[showIndex === index ? 'show' : '', 'tags']"
       v-for="(item, index) in list"
       :key="item.path"
       @click.prevent="handleLink(item)"
@@ -48,6 +48,11 @@ export default {
       }
     },
     deleteLink(index) {
+      let name = this.list[index].name
+      this.$store.dispatch('permission/toggleCachList', {
+        name,
+        type: 0
+      })
       if (index == this.showIndex) {
         this.showIndex = index == 0 ? 0 : index - 1;
         this.list.splice(index, 1);
@@ -62,7 +67,11 @@ export default {
     },
     setList() {
       let route = this.$route;
+      if(!route.meta.showInBar){
+        return this.showIndex = ''
+      }
       if (
+       
         !this.list.some((v, i) => {
           if (v.path === route.path) {
             this.showIndex = i;

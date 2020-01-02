@@ -16,6 +16,8 @@ export default [
                     title: "Home",
                     showRouter: "/Home",
                     icon: "el-icon-s-custom",
+                    keepAlive: true,
+                    showInBar: true
                 }
             }
         ]
@@ -35,7 +37,9 @@ export default [
                 name: "Page1",
                 meta: {
                     title: "Page1",
-                    showRouter: "/Page1"
+                    showRouter: "/Page1",
+                    keepAlive: true,
+                    showInBar: true
                 },
                 component: () => import('@/pages/Admin/Page1/Page1.vue')
             },
@@ -45,7 +49,8 @@ export default [
                 name: "Page2",
                 meta: {
                     title: "Page2",
-                    showRouter: "/Page2"
+                    showRouter: "/Page2",
+                    keepAlive: true
                 },
                 component: () => import('@/pages/Admin/Page2/Page2'),
             },
@@ -55,7 +60,8 @@ export default [
                 hidden: true,
                 meta: {
                     title: "Page3",
-                    showRouter: "/Page1"
+                    showRouter: "/Page1",
+                    keepAlive: true
                 },
                 component: () => import('@/pages/Admin/Page3/Page3.vue')
             },

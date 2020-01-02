@@ -1,12 +1,17 @@
 <template>
     <div>
-        page2
+        {{rand}}
     </div>
 </template>
 
 <script>
     export default {
-        name: "Page2"
+        name: "Page2",
+        data(){
+            return{
+                rand: Math.random()
+            }
+        }
     }
 </script>
 

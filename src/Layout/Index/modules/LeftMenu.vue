@@ -40,6 +40,7 @@ export default {
   computed: {
     ...mapState({
       routes: state => {
+        console.log(state)
         return state.permission.routes;
       }
     }),

@@ -4,10 +4,12 @@
     <LeftMenu></LeftMenu>
     <div class="main-content-area">
       <breadcrumb />
-      <navigation-scroll/>
+      <navigation-scroll />
       <div id="mainSection">
         <transition name="breadcrumb" mode="out-in">
-          <router-view></router-view>
+          <keep-alive :include="cachList">
+            <router-view></router-view>
+          </keep-alive>
         </transition>
       </div>
     </div>
@@ -18,7 +20,7 @@
 import HeadNav from "./modules/HeadNav";
 import LeftMenu from "./modules/LeftMenu";
 import breadcrumb from "./modules/Breadcrumb";
-import navigationScroll from "./modules/NavigationScroll"
+import navigationScroll from "./modules/NavigationScroll";
 import { mapState } from "vuex";
 export default {
   name: "Index",
@@ -26,14 +28,17 @@ export default {
     HeadNav,
     LeftMenu,
     breadcrumb,
-    navigationScroll,
+    navigationScroll
   },
   computed: {
-    ...mapState(["nowRouter"])
+    ...mapState({
+      cachList: (state) => state.permission.cachList.join(',')
+    }),
   },
   data() {
-    return {};
-  }
+    return {
+    };
+  },
 };
 </script>
 

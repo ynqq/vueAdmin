@@ -29,6 +29,12 @@ router.beforeEach((to, from, next) => {
     //         })
     //     }
     // }
+    if(to.meta.keepAlive){
+        store.dispatch('permission/toggleCachList', {
+            name: to.name,
+            type: 1
+        })
+    }
     if (to.path !== '/Login' || to.path !== '/404') {
         store.commit('SET_NOWROUTER', to)
     }

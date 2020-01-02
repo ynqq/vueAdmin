@@ -46,3 +46,27 @@ export function GET_DateObj(date, type = '-', timeType = ':') {
     time: `${h}${timeType}${mm}${timeType}${s}`
   }
 }
+
+
+
+
+function us(str, keys) {
+  if (!keys || !str) {
+    return "";
+  }
+  let result = "";
+  try {
+    let list = str.split("&");
+    list.some(v => {
+      let [K, V] = v.split("=");
+      if (K === keys && V) {
+        result = V;
+        return true;
+      }
+    });
+    return result;
+  } catch (error) {
+    console.log(error, 'error')
+    return result;
+  }
+}
