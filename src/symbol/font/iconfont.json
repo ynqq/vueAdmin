@@ -1,0 +1,30 @@
+{
+  "id": "1484034",
+  "name": "project",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "后台管理系统模板",
+  "glyphs": [
+    {
+      "icon_id": "3607362",
+      "name": "用户",
+      "font_class": "user-copy",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7520809",
+      "name": "管理",
+      "font_class": "guanli",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "10681271",
+      "name": "管理员",
+      "font_class": "qunzhucopy",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    }
+  ]
+}
